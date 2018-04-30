@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calculator" class="com.dgit.ex1.Calculator"/>
+	<bean id="myCalculator" class="com.dgit.ex1.MyCalculator">
+		<property name="calculator">
+			<ref bean="calculator"/>
+		</property>
+		<property name="num1" value="10"/>
+		<property name="num2" value="5"/>
+	</bean>
+
+	<bean id="taxCalculator" class="com.dgit.ex2.TaxCalculator">
+		<property name="lowTax" value="15.2" />
+		<property name="normalTax" value="20.1"/>
+		<property name="overTax" value="25.5"/>
+	</bean>
+	<bean id="myPerson" class="com.dgit.ex2.MyPerson">
+		<property name="name" value="매미"/>
+		<property name="age" value="21"/>
+		<property name="pay" value="400"/>
+		<property name="taxCalculator">
+			<ref bean="taxCalculator"/>
+		</property>
+	</bean>
+	
+</beans>
