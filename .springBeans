@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/applicationCtx.xml</config>
 		<config>src/main/resources/applicationCtx3.xml</config>
+		<config>src/main/resources/applicationCtx4.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
