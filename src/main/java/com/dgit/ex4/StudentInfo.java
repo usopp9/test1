@@ -1,5 +1,7 @@
 package com.dgit.ex4;
 
+import com.dgit.ex6.Family;
+
 public class StudentInfo {
 	private String name;
 	private String stdclass;
@@ -7,6 +9,16 @@ public class StudentInfo {
 	private int eng;
 	private int kor;
 	private Report report;
+	private Family family;
+	
+	
+	public StudentInfo() {
+		
+	}
+	public StudentInfo(Report report,Family family){
+		this.report = report;
+		this.family = family;
+	}
 	public String getName() {
 		return name;
 	}
@@ -51,5 +63,9 @@ public class StudentInfo {
 		System.out.println("영어: "+eng);
 		System.out.println("국어: "+kor);
 		report.reportGrade(math, eng, kor);
+		
+		if(family != null){
+		family.printInfo();
+		}
 	}
 }
